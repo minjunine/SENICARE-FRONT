@@ -1,23 +1,45 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import './style.css';
 
 interface Props {
     label: string;
     type: 'text' | 'password';
     placeholder: string;
-    buttonName: string;
+    value: string;
+    message: string;
+    messageError: boolean;
+    buttonName?: string;
+
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    onButtonClick?: () => void;
 }
 
-export default function InputBox() {
+export default function InputBox({
+  label, 
+  type, 
+  placeholder, 
+  value, 
+  buttonName, 
+  message,
+  messageError,
+  onChange,
+  onButtonClick,
+}: Props) {
+
+  //이름
+  //아이디
+  //비밀번호
+
   return (
     <div className="input-box">
-    <div className="label">인증번호</div>
-    <div className="input-area">
-        <input type="text" placeholder="인증번호 4자리를 입력해주세요." />
-        <div className="input-button disable">인증 확인</div>
+      <div className="label">{"label"}</div>
+      <div className="input-area">
+        <input value={value} type={type} placeholder={placeholder} onChange={onChange} />
+      {buttonName && <div className={`input-button ${value ? 'active' : 'disable'}`} onClick={onButtonClick}>{buttonName}</div>}
     </div>
-    <div className="message"></div>
+    <div className={`message ${messageError ? 'error' : 'primary'}`}>{message}</div>
 </div>
 
   )
+
 }
