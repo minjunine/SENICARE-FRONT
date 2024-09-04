@@ -1,6 +1,15 @@
 {
-    "notebook.defaultFormatter": "aaron-bond.better-comments",
+    "redhat.telemetry.enabled": true,
+    "editor.fontLigatures": false,
+    "editor.fontVariations": false,
+    "editor.fontWeight": "normal",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.iconTheme": "material-icon-theme",
     "better-comments.tags": [
+
         
         {
             "tag": "!",
@@ -40,12 +49,150 @@
         },
         {
             "tag": "*",
-            "color": "#98C379",
+            "color": "#FFFF00",
             "strikethrough": false,
             "underline": false,
-            "backgroundColor": "transparent",
+            "backgroundColor": "#111111",
             "bold": false,
             "italic": false
-        }
+        },
+        {
+            "tag": "#",
+            "color": "#FF00A2",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#111111",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "%",
+            "color": "#A3FF00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#111111",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "&",
+            "color": "#ffffff",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#111111",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "description",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(152, 152, 152, 0.5)",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "component",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(0, 255, 152, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "interface",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(0, 152, 255, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "function",
+            "color": "rgba(255, 255, 255, 1)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(152, 0, 255, 0.2)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "state",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(152, 255, 255, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "event handler",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(152, 152, 255, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "effect",
+            "color": "rgba(255, 255, 255, 1)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(0, 0, 255, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "render",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(255, 0, 0, 0.3)",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "variable",
+            "color": "rgba(0, 0, 0, 0.7)",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "rgba(0, 255, 0, 0.5)",
+            "bold": true,
+            "italic": false
+        },
+    ],
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.env.windows": {
+        "LANG": "en_US.UTF-8"
+    },
+    "java.debug.settings.hotCodeReplace": "auto",
+    "spring.dashboard.openWith": "external",
+    "editor.stickyScroll.enabled": false,
+    "emmet.variables": {
+        "lang": "ko"
+    },
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "auto-close-tag.excludedTags": [
+        
+        "area",
+        "base",
+        "br",
+        "col",
+        "command",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "keygen",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr"
     ]
 }
