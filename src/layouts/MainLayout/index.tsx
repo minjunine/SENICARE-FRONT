@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { Outlet, useLocation, useNavigate } from 'react-router';
-import { AUTH_ABSOLUTE_PATH, CS_PATH, HR_PATH, MM_PATH, ROOT_ABSOLUTE_PATH } from 'src/constants';
+import { ACCESS_TOKEN, AUTH_ABSOLUTE_PATH, CS_DETAIL_PATH, CS_PATH, HR_PATH, MM_PATH, ROOT_ABSOLUTE_PATH } from 'src/constants';
 import './style.css';
 
 // component: 로고 컴포넌트 //
@@ -37,8 +37,8 @@ function Top() {
 
   // event handler : 로그아웃 버튼 클릭 이벤트 처리 //
   const onLogoutButtonClickHandler = () => {
-    removeCookie('accessToken', {path: ROOT_ABSOLUTE_PATH});
-    navigator(AUTH_ABSOLUTE_PATH);
+    removeCookie('accessToken', { path: ROOT_ABSOLUTE_PATH });
+    navigator(CS_DETAIL_PATH(10));
   };
 
   // render: 상단 컴포넌트 //
@@ -56,7 +56,20 @@ function SideNavigation() {
 
   // render: 좌측 네비게이션 컴포넌트 //
   return (
-    <div id='layout-side-navigation'></div>
+    <div id='layout-side-navigation'>
+      <div className='navigation'></div>
+      <div className='navigation-item active'>
+        <div className='icon-cs-icon'></div>
+        <div className='item-text'>고객 관리</div>
+      </div>
+      <div className='navigation-item'>
+        <div className='icon-mm-icon'></div>
+        <div className='item-text'>용품 관리</div>
+      </div>
+      <div className='navigation-item'>
+        </div><div className='icon-hr-icon'></div>
+        <div className='item-text'>인사 관리</div>
+      </div>
   );
 }
 
@@ -71,7 +84,7 @@ export default function MainLayout() {
 
   // effect: 레이아웃 마운트시 로그인 여부 확인 //
   useEffect(() => {
-    if(!cookies.accessToken) navigator('auth');
+    if(!cookies[ACCESS_TOKEN]) navigator(AUTH_ABSOLUTE_PATH);
   }, []);
 
     // render: 메인 레이아웃 컴포넌트 렌더링 //
