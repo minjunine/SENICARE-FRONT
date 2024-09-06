@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { Route, Routes, useNavigate } from 'react-router';
 import Auth from 'src/views/Auth';
-import { AUTH_PATH, CS_DETAIL_PATH, CS_PATH, CS_UPDATE_PATH, CS_WRITE_PATH, HR_DETAIL_PATH, HR_PATH, HR_UPDATE_PATH, MM_PATH, OTHERS_PATH } from './constants';
+import { AUTH_PATH, CS_DETAIL_PATH, CS_PATH, CS_UPDATE_PATH, CS_WRITE_PATH, HR_DETAIL_PATH, HR_PATH, MM_PATH, OTHERS_PATH } from './constants';
+import CS from './CS';
+import CSDetail from './CS/Detail';
 import MainLayout from './layouts/MainLayout';
 import './Senicare.css';
 
@@ -36,18 +38,17 @@ export default function Senicare() {
             <Route index element={<Index />} />
             <Route path={AUTH_PATH} element={<Auth />} />
             <Route path={CS_PATH} element={<MainLayout />}>
-                <Route index element={<>고객 리스트 보기</>} />
-                <Route path={CS_WRITE_PATH} element={<>고객 등록</>} />
-                <Route path={CS_DETAIL_PATH(':customNumber')} element={<>고객 정보 보기</>} />
-                <Route path={CS_UPDATE_PATH(':customNumber')} element={<>고객 정보 수정</>} />
+                <Route index element={<CS />} />
+                <Route path={CS_WRITE_PATH} element={<CSWrite />} />
+                <Route path={CS_DETAIL_PATH(':customNumber')} element={<CSDetail />} />
+                <Route path={CS_UPDATE_PATH(':customNumber')} element={<CSUpdate />} />
             </Route>
             <Route path={MM_PATH} element={<MainLayout />}>
-                <Route index element={<></>} />
+                <Route index element={<MM />} />
             </Route>
             <Route path={HR_PATH} element={<MainLayout />}>
-                <Route index element={<></>} />
-                <Route path={HR_DETAIL_PATH(':userId')} element={<></>} />
-                <Route path={HR_UPDATE_PATH(':userId')} element={<></>} />
+                <Route index element={<HR />} />
+                <Route path={HR_DETAIL_PATH(':userId')} element={<HRDetail />} />
             </Route>
             <Route path={OTHERS_PATH} element={<Index />} />
         </Routes>
